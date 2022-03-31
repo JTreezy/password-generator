@@ -20,6 +20,11 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+The following image shows the web application's appearance and functionality: 
+
+![The Password Generator application displays a red button to "Generate Password".](/assets/images/03-javascript-homework-demo.png)
+
+
 Grading Requirements
 Note: If a homework assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
 
