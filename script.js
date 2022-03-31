@@ -5,11 +5,11 @@ function generatePassword(){
     var numericBank = [0,1,2,3,4,5,6,7,8,9]
     var specialCharactersBank = ["!","@","#","$","%","^","&","*","(",")"]
     var bank = []
-    var generatePassword = ""
+    var generateResult = ""
     var randomBank = []
     
-    var lengthOfPassword = prompt("How long do you want your password to be? The password has to be at least 8 characters long and at MOST 128 characters long");
-    if ((8>lengthOfPassword || lengthOfPassword>128) && typeof lengthOfPassword==="string") {
+    var lengthOfPassword = parseInt(prompt("How long do you want your password to be? The password has to be at least 8 characters long and at MOST 128 characters long"));
+    if (8>lengthOfPassword || lengthOfPassword>128 || isNaN(lengthOfPassword)) {
       alert("That is not a valid numeric choice")
       generatePassword()
     }
@@ -58,9 +58,9 @@ function generatePassword(){
     }
 
 
-    generatePassword = bank.join("")
+    generateResult = bank.join("")
     
-    return generatePassword
+    return generateResult
   }
 
   
