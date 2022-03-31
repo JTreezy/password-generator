@@ -9,14 +9,13 @@ function generatePassword(){
     var randomBank = []
     
     var lengthOfPassword = prompt("How long do you want your password to be? The password has to be at least 8 characters long and at MOST 128 characters long");
-    if (8>lengthOfPassword || lengthOfPassword>128) {
+    if ((8>lengthOfPassword || lengthOfPassword>128) && typeof lengthOfPassword==="string") {
       alert("That is not a valid numeric choice")
       generatePassword()
     }
     var lower = prompt('Do you want to include lower letters? Type "Y" or "N"').toUpperCase();
     if (lower == "Y"){
       bank.concat(lowerBank)
-
     }
 
     var upper = prompt('Do you want to include uppercase letters? Type "Y" or "N"').toUpperCase();
@@ -48,6 +47,12 @@ function generatePassword(){
         bank.push(specialCharactersBank[Math.floor(Math.random()*specialCharactersBank.length)])
       }
     }
+    if (bank.length==0){
+      alert("You must include at least one category in order to create a password")
+      generatePassword()
+    }
+
+
     while (bank.length>parseInt(lengthOfPassword)){
       bank.pop()
     }
